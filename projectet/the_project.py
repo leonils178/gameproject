@@ -7,13 +7,13 @@ letter=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O
 
 if x1==('Y'):
     x2=10
-    word=["S","U","N","S","S","H","I","N","E"]
+    word=["S","U","N","S","H","I","N","E"]
     g=len(word)
     correct=[]
     word2= []
     for i in word:
-        word2.append("_") #
-    print ( " ".join(word2) ) #
+        word2.append("_") # here goes the part that is the small dashes under so that one can see what letters are correctly guessed
+    print ( " ".join(word2) ) # part 2 of the "underslashes"
     
     while x2>0:
         index=0
@@ -26,7 +26,11 @@ if x1==('Y'):
             if x3==guess:
                 correctguesses.insert(0,index)
                 correct.append(guess)
+                word2.pop(index)
+                word2.insert(index,guess)
+                
             index=index+1
+        print( " ".join(word2) )
             
                 
         if correctguesses==[]:
